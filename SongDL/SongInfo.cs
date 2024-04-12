@@ -8,10 +8,8 @@ public class SongInfo
 
     public static void DisplaySong(Song song)
     {
-        Console.WriteLine("Song Title: " + song.Title );
+        Console.WriteLine("Song Title: " + song.Title);
         Console.WriteLine("Song Album: " + song.Album);
         Console.WriteLine("Song Release Date: " + song.releaseDate);
     }
 }
-
-    
