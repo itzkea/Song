@@ -5,14 +5,15 @@ namespace SongBL
 {
     public class SongVerify
     {
-        public bool VerifySong(String title, string album, string releaseDate)
+        public bool VerifySong(string title)
         {
             SongLibrary songDL = new SongLibrary();
-            var result = songDL.GetSong(title,album,releaseDate);
+            var result = songDL.GetSong(title);
 
-            return result.Title != null ? true : false && result.Album != null ? true : false && result.ReleaseDate != null ? true : false;
+            return result.Title != null ? true : false; 
 
+        }
+       
         }
 
     }
-}

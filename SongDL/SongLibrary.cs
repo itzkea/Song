@@ -72,20 +72,20 @@ public class SongLibrary
 
 
     }
-
-    public Song GetSong(string title, string album, string releaseDate)
+    public Song GetSong(string title)
     {
         Song foundSong = new Song();
 
         foreach (var song in songList)
         {
-            if (title == song.Title && album == song.Album && releaseDate == song.ReleaseDate) 
+            if (title == song.Title)
             {
                 foundSong = song;
             }
         }
 
         return foundSong;
+
 
     }
 

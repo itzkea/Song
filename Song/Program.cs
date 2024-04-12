@@ -2,12 +2,36 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 using songDL;
+using SongBL;
 public class Program
 {
     static void Main(string[] args)
     {
         SongLibrary songList = new SongLibrary();
 
+        Console.WriteLine("Enter a Taylor song that you think is included in her top 10 most popular songs");
+        Console.WriteLine();
+        string title = Console.ReadLine();
+
+        SongVerify songDL = new SongVerify();
+        bool result = songDL.VerifySong(title);
+
+        if (result)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Song Found!!!");
+         
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("Not included in the top 10");
+
+            return;
+
+        }
+
+            Console.WriteLine();
             Console.WriteLine("Welcome to 10 Popular songs of Taylor Swift");
             Console.WriteLine();
             while (true)
@@ -27,16 +51,16 @@ public class Program
                 Console.WriteLine("10. Back to december");
                 Console.WriteLine();
                 Console.Write("Your choice: ");
-                
 
-            string choices = Console.ReadLine();
 
-               switch (choices)
+                string choices = Console.ReadLine();
+
+                switch (choices)
                 {
                     case "1":
-                       Console.WriteLine();
-                       SongInfo.DisplaySong(songList.songList[0]);
-                         return;
+                        Console.WriteLine();
+                        SongInfo.DisplaySong(songList.songList[0]);
+                        return;
 
                     case "2":
                         Console.WriteLine();
@@ -62,7 +86,7 @@ public class Program
                         Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[5]);
                         return;
-                    
+
                     case "7":
                         Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[6]);
@@ -84,9 +108,9 @@ public class Program
                         return;
 
                     default:
-                       Console.WriteLine();
-                       Console.WriteLine("Invalid Input");
-                       break;
+                        Console.WriteLine();
+                        Console.WriteLine("Invalid Input");
+                        break;
 
 
                 }
@@ -94,8 +118,11 @@ public class Program
 
 
         }
-
     }
+
+
+
+    
 
 
 
