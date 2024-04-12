@@ -12,6 +12,7 @@ public class Program
             Console.WriteLine();
             while (true)
             {
+                Console.WriteLine();
                 Console.WriteLine("Choose Song of Taylor Swift:");
                 Console.WriteLine();
                 Console.WriteLine("1. Style");
@@ -26,48 +27,59 @@ public class Program
                 Console.WriteLine("10. Back to december");
                 Console.WriteLine();
                 Console.Write("Your choice: ");
+                
 
-                string choices = Console.ReadLine();
+            string choices = Console.ReadLine();
 
                switch (choices)
                 {
                     case "1":
-                        SongInfo.DisplaySong(songList.songList[0]);
+                       Console.WriteLine();
+                       SongInfo.DisplaySong(songList.songList[0]);
                          return;
 
                     case "2":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[1]);
                         return;
 
                     case "3":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[2]);
                         return;
 
                     case "4":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[3]);
                         return;
 
                     case "5":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[4]);
                         return;
 
                     case "6":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[5]);
                         return;
                     
                     case "7":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[6]);
                         return;
 
                     case "8":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[7]);
                         return;
 
                     case "9":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[8]);
                         return;
 
                     case "10":
+                        Console.WriteLine();
                         SongInfo.DisplaySong(songList.songList[9]);
                         return;
 

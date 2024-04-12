@@ -6,7 +6,7 @@ using System.Collections.Generic;
     {
         public string Title;
         public string Album;
-        public string releaseDate;
+        public string ReleaseDate;
 
     }
 

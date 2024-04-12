@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Library\LibraryModel.csproj" />
+    <ProjectReference Include="..\SongDL\SongDL.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -10,6 +10,6 @@ public class SongInfo
     {
         Console.WriteLine("Song Title: " + song.Title);
         Console.WriteLine("Song Album: " + song.Album);
-        Console.WriteLine("Song Release Date: " + song.releaseDate);
+        Console.WriteLine("Song Release Date: " + song.ReleaseDate);
     }
 }
