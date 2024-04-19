@@ -1,16 +1,17 @@
 ﻿using System;
 using songDL;
+using SongDL;
 
 namespace SongBL
 {
     public class SongVerify
     {
-        public bool VerifySong(string title)
+        public bool VerifySong(string Album)
         {
-            SongLibrary songDL = new SongLibrary();
-            var result = songDL.GetSong(title);
+            AlbumLibrary songDL = new AlbumLibrary();
+            var result = songDL.GetAlbum(Album);
 
-            return result.Title != null ? true : false; 
+            return result.Album != null ? true : false; 
 
         }
        
