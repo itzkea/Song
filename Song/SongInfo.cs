@@ -9,8 +9,9 @@ public class SongInfo
     public static void DisplaySong(Song song)
     {
         Console.WriteLine("Song Album: " + song.Album);
-        Console.WriteLine("Song Title: " + song.SongTitle);
-        Console.WriteLine("Song Lyrics: " + song.SongLyrics);
+        Console.WriteLine("Song Title: " + song.Title);
+        Console.WriteLine("Song Release Date: " + song.releaseDate);
+        Console.WriteLine("Song Lyrics: " + song.Lyrics);
 
     }
 }

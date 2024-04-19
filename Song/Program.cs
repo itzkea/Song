@@ -3,45 +3,53 @@ using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 using songDL;
 using SongBL;
-using SongDL;
+using LibraryModel;
+
 public class Program
 {
     static void Main(string[] args)
     {
         SongLibrary songList = new SongLibrary();
 
-        Console.Write("Enter Album: ");
-        string album = Console.ReadLine();
+        Console.Write("Enter Username: ");
+        string username = Console.ReadLine();
 
-        SongVerify songDL = new SongVerify();
-        bool result = songDL.VerifySong(album);
+        Console.Write("Enter Password: ");
+        string password = Console.ReadLine();
+
+        UserVerify songDL = new UserVerify();
+        bool result = songDL.userverify(username, password);
 
         if (result)
         {
             Console.WriteLine();
-            Console.WriteLine("Album Found!");
+            Console.WriteLine("User Found!");
          
         }
         else
         {
             Console.WriteLine();
-            Console.WriteLine("No album found!");
+            Console.WriteLine("No user found!");
 
             return;
 
         }
 
             Console.WriteLine();
-            Console.WriteLine("Welcome!");
+            Console.WriteLine("Welcome to Taylor's Songs!");
             Console.WriteLine();
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("Choose song from album fearless:");
+                Console.WriteLine("Choose a song");
                 Console.WriteLine();
-                Console.WriteLine("1. Fearless");
-                Console.WriteLine("2. Lover");
-                Console.WriteLine("3. Red");
+                Console.WriteLine("1. Love Story ");
+                Console.WriteLine("2. You Belong With Me ");
+                Console.WriteLine("3. Fearless ");
+                Console.WriteLine("4. All Too Well");
+                Console.WriteLine("5. Back To December");
+                Console.WriteLine("6. Style");
+                Console.WriteLine("7. Lover");
                 Console.WriteLine();
          
 
@@ -66,9 +74,29 @@ public class Program
                         SongInfo.DisplaySong(songList.songList[2]);
                         return;
 
-                    default:
+                    case "4":
                         Console.WriteLine();
-                        Console.WriteLine("Invalid Input");
+                        SongInfo.DisplaySong(songList.songList[3]);
+                        return;
+
+                    case "5":
+                        Console.WriteLine();
+                        SongInfo.DisplaySong(songList.songList[4]);
+                        return;
+
+                    case "6":
+                        Console.WriteLine();
+                        SongInfo.DisplaySong(songList.songList[5]);
+                        return;
+
+                    case "7":
+                        Console.WriteLine();
+                        SongInfo.DisplaySong(songList.songList[6]);
+                        return;
+
+                default:
+                        Console.WriteLine();
+                        Console.WriteLine("Invalid Input!");
                         break;
 
 
