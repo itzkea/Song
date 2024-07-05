@@ -24,7 +24,7 @@ namespace SongDL
 
         public List<Song> GetSongs()
         {
-            string selectStatement = "SELECT Album,Title FROM Song";
+            string selectStatement = "SELECT Album,Title FROM Songs";
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, sqlConnection);
 
@@ -53,7 +53,7 @@ namespace SongDL
             {
                 int success;
 
-                string insertStatement = "INSERT INTO song VALUES (@Album, @Title)";
+                string insertStatement = "INSERT INTO Songs VALUES (@Album, @Title)";
 
                 SqlCommand insertCommand = new SqlCommand(insertStatement, sqlConnection);
 
@@ -72,21 +72,20 @@ namespace SongDL
 
             public int UpdateSong(string Album, string Title)
             {
-                int success;
+            int success;
 
-                string updateStatement = $"UPDATE Song SET Title = @Title WHERE Album = @Album";
+            string updateStatement = $"UPDATE Songs SET Title = @Title WHERE Album = @Album";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
+            sqlConnection.Open();
 
-                SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
-                sqlConnection.Open();
+            updateCommand.Parameters.AddWithValue("@Album", Album);
+            updateCommand.Parameters.AddWithValue("Title", Title);
 
-                updateCommand.Parameters.AddWithValue("@Album", Album);
-                updateCommand.Parameters.AddWithValue("@Title", Title );
+            success = updateCommand.ExecuteNonQuery();
 
-                success = updateCommand.ExecuteNonQuery();  
+            sqlConnection.Close();
 
-                sqlConnection.Close();
-
-                return success;
+            return success;
 
             }
 

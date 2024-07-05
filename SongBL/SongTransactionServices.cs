@@ -20,9 +20,9 @@ namespace SongBL
             return result;
         }
 
-        public bool CreateSong(string Title, string Album)
+        public bool CreateSong(string Album, string Title)
         {
-            Song song = new Song { Title = Title, Album = Album };
+            Song song = new Song { Album = Album, Title = Title };
 
             return CreateSong(song);
         }
@@ -41,7 +41,7 @@ namespace SongBL
 
         public bool UpdateSong(string Title, string Album)
         {
-            Song song = new Song {Title = Title, Album = Album };
+            Song song = new Song { Album = Album, Title = Title };
 
             return UpdateSong(song);
         }

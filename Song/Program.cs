@@ -14,8 +14,10 @@ namespace Client
 
             foreach (var item in song)
             {
-                Console.WriteLine(item.Title);
                 Console.WriteLine(item.Album);
+                Console.WriteLine(item.Title);
+                Console.WriteLine(); 
+
             }
 
         }
