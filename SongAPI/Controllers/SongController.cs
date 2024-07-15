@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SongBL;
+using LibraryModel;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Reflection.Metadata.Ecma335;
 
@@ -46,7 +47,22 @@ namespace SongAPI.Controllers
             return new JsonResult(result);
 
         }
-        
+
+        [HttpDelete]
+        public JsonResult DeleteSong(SongAPI.Song request)
+        {
+
+            var delete = new LibraryModel.Song
+            {
+                Album = request.Album
+    
+            };
+
+            var result = _transactionServices.DeleteSong(delete);
+
+            return new JsonResult(result);
+        }
+
     }
     
 

@@ -13,7 +13,8 @@ namespace SongDL
     public class SqlDataBase
     {
         static string connectionString
-            = "Data Source = DESKTOP-7NDQCQL; Initial Catalog = Song; Integrated Security = True;";
+            = "Server = tcp:20.2.38.141,1433; Database = Song; User Id = sa; Password = integ2!";
+            //= "Data Source = DESKTOP-7NDQCQL; Initial Catalog = Song; Integrated Security = True;";
 
         SqlConnection sqlConnection;
 
@@ -89,16 +90,15 @@ namespace SongDL
 
             }
 
-            public int DeleteSong(string Album, string Title)
+            public int DeleteSong(string Album)
             {
                 int success;
 
-                string deleteStatement = $"UPDATE FROM song WHERE Album = @Album, Title = @Title";
+                string deleteStatement = $"DELETE FROM Songs WHERE Album = @Album";
                 SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
                 sqlConnection.Open();
 
                 deleteCommand.Parameters.AddWithValue("@Album", Album);
-                deleteCommand.Parameters.AddWithValue("@Title", Title);
 
                 success = deleteCommand.ExecuteNonQuery();
 
@@ -107,10 +107,6 @@ namespace SongDL
                 return success;
 
             }
-
-
-
-
 
         }
 

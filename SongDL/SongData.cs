@@ -32,7 +32,7 @@ namespace SongDL
 
         public int DeleteSong(Song song)
         {
-            return sqlData.DeleteSong(song.Title, song.Album);
+            return sqlData.DeleteSong(song.Album);
         }
     }
 }
